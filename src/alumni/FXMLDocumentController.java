@@ -17,12 +17,15 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -578,7 +581,7 @@ public class FXMLDocumentController implements Initializable {
         aCourseUG.setItems(FXCollections.observableArrayList("Select Course", "BE"));
         aCourseUG.getSelectionModel().selectFirst();
         
-        if(aCourseUG.getSelectionModel().isSelected(0)){
+        if(aCourseUG.getSelectionModel().getSelectedIndex()==0){
             aBranchUG.setItems(FXCollections.observableArrayList("Select Branch"));
             aBranchUG.getSelectionModel().selectFirst();
         }else{
@@ -1062,14 +1065,20 @@ public class FXMLDocumentController implements Initializable {
             if(pCompany.getText()!=null && pDesignation.getText()!=null && pDOJ.getValue()!=null && pPackage.getText()!=null){
                 Date doj = new Date(pDOJ.getValue().toEpochDay());
                 Date dol = new Date(pDOL.getValue().toEpochDay());
+                
+                Calendar calendar = new GregorianCalendar();
+                calendar.setTime(doj);
+                int year = calendar.get(Calendar.YEAR);
+                System.out.println("Year: "+ year);
+                
                 if(doj.before(dol)){                                            //Comparing DOJ and DOL
                     jobmod.add(new JobModel(0,pCompany.getText(), pDesignation.getText(), pLocation.getText(),
                                pDOJ.getValue().toString(), pDOL.getValue().toString(), Double.valueOf(pPackage.getText())));
                     setJobList();
                 }else{
                     Alert al = new Alert(Alert.AlertType.ERROR);
-                    al.setTitle("Incomplete fields!");
-                    al.setContentText("Please fill all details in professional tab or disable the fields!");
+                    al.setTitle("Invalid date input!");
+                    al.setContentText("Date of leaving can't be earlier than date of joining!");
                     al.setHeaderText(null);
                     al.show();
                 }
@@ -1541,6 +1550,9 @@ public class FXMLDocumentController implements Initializable {
         //setProfessionDetails(mod1);
         populateScrJobList(mod1);
         
+        int rand = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        System.out.println("Random = " + rand);
+        
         ImageView icon;
         File file = null;
         if(mod1.getPic()!=null)
@@ -1557,6 +1569,38 @@ public class FXMLDocumentController implements Initializable {
         icon.setFitWidth(145); icon.setFitHeight(155);
         profilelabel.setGraphic(icon);
             
+        switch(rand){
+            case 1: icon = new ImageView(new Image(getClass().getResourceAsStream("res/cover1.jpg")));
+                    icon.setFitWidth(865); icon.setFitHeight(180);
+                    coverlabel.setGraphic(icon);
+                    break;
+                    
+            case 2: icon = new ImageView(new Image(getClass().getResourceAsStream("res/cover2.jpg")));
+                    icon.setFitWidth(865); icon.setFitHeight(180);
+                    coverlabel.setGraphic(icon);
+                    break;
+                    
+            case 3: icon = new ImageView(new Image(getClass().getResourceAsStream("res/cover3.jpg")));
+                    icon.setFitWidth(865); icon.setFitHeight(180);
+                    coverlabel.setGraphic(icon);
+                    break;
+                    
+            case 4: icon = new ImageView(new Image(getClass().getResourceAsStream("res/cover4.jpg")));
+                    icon.setFitWidth(865); icon.setFitHeight(180);
+                    coverlabel.setGraphic(icon);
+                    break;
+                    
+            case 5: icon = new ImageView(new Image(getClass().getResourceAsStream("res/cover5.jpg")));
+                    icon.setFitWidth(865); icon.setFitHeight(180);
+                    coverlabel.setGraphic(icon);
+                    break;
+                    
+            case 6: icon = new ImageView(new Image(getClass().getResourceAsStream("res/cover6.jpg")));
+                    icon.setFitWidth(865); icon.setFitHeight(180);
+                    coverlabel.setGraphic(icon);
+                    break;
+        };
+        
         scrName.setText(mod1.getFirstname());
         
         if(mod1.getPlaced()==1){
@@ -2092,6 +2136,21 @@ public class FXMLDocumentController implements Initializable {
                         cEmail.resetValidation();
                     }
                 }
+            }
+        });
+        
+        aCourseUG.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                System.out.println("Selected index = " + aCourseUG.getSelectionModel().getSelectedIndex());
+        
+                if(aCourseUG.getSelectionModel().getSelectedIndex()==0){
+                    aBranchUG.setItems(FXCollections.observableArrayList("Select Branch"));
+                    aBranchUG.getSelectionModel().selectFirst();
+                }else if(aCourseUG.getSelectionModel().getSelectedIndex()==1){
+                    aBranchUG.setItems(FXCollections.observableArrayList("Select Branch", "CSE", "MECH", "IT", "CIVIL", "ETC"));
+                    aBranchUG.getSelectionModel().selectFirst();
+        }
             }
         });
     }    
