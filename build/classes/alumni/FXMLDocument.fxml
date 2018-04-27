@@ -398,7 +398,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="scrAge" layoutX="411.0" layoutY="70.0" prefHeight="17.0" prefWidth="127.0" text="Age:">
+                  <Label fx:id="scrAge" layoutX="411.0" layoutY="70.0" prefHeight="21.0" prefWidth="191.0" text="DOB:">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -408,17 +408,17 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="scrState" layoutX="409.0" layoutY="147.0" prefHeight="21.0" prefWidth="126.0" text="State">
+                  <Label fx:id="scrState" layoutX="409.0" layoutY="147.0" prefHeight="21.0" prefWidth="139.0" text="State">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="scrCity" layoutX="543.0" layoutY="148.0" prefHeight="21.0" prefWidth="119.0" text="City">
+                  <Label fx:id="scrCity" layoutX="582.0" layoutY="148.0" prefHeight="21.0" prefWidth="132.0" text="City">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="scrPincode" layoutX="701.0" layoutY="147.0" text="Pincode">
+                  <Label fx:id="scrPincode" layoutX="740.0" layoutY="148.0" prefHeight="21.0" prefWidth="81.0" text="Pincode">
                      <font>
                         <Font size="15.0" />
                      </font>

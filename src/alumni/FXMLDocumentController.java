@@ -1066,11 +1066,6 @@ public class FXMLDocumentController implements Initializable {
                 Date doj = new Date(pDOJ.getValue().toEpochDay());
                 Date dol = new Date(pDOL.getValue().toEpochDay());
                 
-                Calendar calendar = new GregorianCalendar();
-                calendar.setTime(doj);
-                int year = calendar.get(Calendar.YEAR);
-                System.out.println("Year: "+ year);
-                
                 if(doj.before(dol)){                                            //Comparing DOJ and DOL
                     jobmod.add(new JobModel(0,pCompany.getText(), pDesignation.getText(), pLocation.getText(),
                                pDOJ.getValue().toString(), pDOL.getValue().toString(), Double.valueOf(pPackage.getText())));
@@ -1549,6 +1544,7 @@ public class FXMLDocumentController implements Initializable {
         
         //setProfessionDetails(mod1);
         populateScrJobList(mod1);
+        scrAge.setText("Dob:    "+mod1.getDob());
         
         int rand = ThreadLocalRandom.current().nextInt(1, 6 + 1);
         System.out.println("Random = " + rand);
@@ -1625,10 +1621,10 @@ public class FXMLDocumentController implements Initializable {
         }else{
             scrCompanyName.setText(mod1.getJobmod().get(0).getCompanyName());
         }*/
-        scrAddress.setText(mod1.getAddress());
-        scrCity.setText(mod1.getCity());
-        scrState.setText(mod1.getState());
-        scrPincode.setText(mod1.getPincode());
+        scrAddress.setText("Address:  "+mod1.getAddress());
+        scrCity.setText("City:  "+mod1.getCity());
+        scrState.setText("State:  "+mod1.getState());
+        scrPincode.setText("Pin:  "+mod1.getPincode());
         
         if(mod1.getCollegeNameUG()==null || mod1.getCollegeNameUG().isEmpty()){
             scrBatchU.setText("Batch: N/A");
@@ -1680,6 +1676,7 @@ public class FXMLDocumentController implements Initializable {
         else
             scrLandline.setText(mod1.getLandline());
     }
+    
     
 /**
  * Used to create a customRow for the main ListView. A row is made up of a
