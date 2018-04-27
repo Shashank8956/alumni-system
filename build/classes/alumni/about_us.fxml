@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane id="AnchorPane" prefHeight="646.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alumni.AboutUsController">
+    <children>
+      <Label fx:id="title" layoutX="303.0" layoutY="14.0" opacity="0.0" text="MEET THE SQUAD">
+         <font>
+            <Font name="Arial Black" size="26.0" />
+         </font>
+      </Label>
+      <Circle fx:id="aboutCircle3" fill="#e0dfdf" layoutX="434.0" layoutY="449.0" opacity="0.0" radius="78.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="aboutCircle4" fill="#e0dfdf" layoutX="604.0" layoutY="449.0" opacity="0.0" radius="78.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="aboutCircle5" fill="#e0dfdf" layoutX="773.0" layoutY="449.0" opacity="0.0" radius="78.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="aboutCircle2" fill="#e0dfdf" layoutX="263.0" layoutY="449.0" opacity="0.0" radius="78.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="aboutCircle1" fill="#e0dfdf" layoutX="100.0" layoutY="449.0" opacity="0.0" radius="78.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+      <Rectangle fx:id="aboutRect1" arcHeight="5.0" arcWidth="5.0" fill="#e0dfdf" height="156.0" layoutX="147.0" layoutY="84.0" opacity="0.0" stroke="WHITE" strokeType="INSIDE" width="156.0" />
+      <Rectangle fx:id="aboutRect2" arcHeight="5.0" arcWidth="5.0" fill="#e0dfdf" height="156.0" layoutX="563.0" layoutY="84.0" opacity="0.0" stroke="WHITE" strokeType="INSIDE" width="156.0" />
+      <Separator fx:id="midSeperator" layoutX="88.0" layoutY="331.0" opacity="0.0" prefHeight="7.0" prefWidth="687.0" />
+      <TextFlow fx:id="TextInchange1" layoutX="128.0" layoutY="245.0" opacity="0.0" prefHeight="65.0" prefWidth="191.0" textAlignment="CENTER">
+         <children>
+            <Label fx:id="inchargeName1" alignment="CENTER" prefHeight="25.0" prefWidth="172.0" text="Prof. Amit Pimpalkal" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="inchargeDept1" text="HOD, CSE Dept, GHRAET">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="inchangePosition1" text="Project Incharge">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow fx:id="TextInchange2" layoutX="513.0" layoutY="245.0" opacity="0.0" prefHeight="65.0" prefWidth="260.0" textAlignment="CENTER">
+         <children>
+            <Label fx:id="inchargeName2" alignment="CENTER" prefHeight="25.0" prefWidth="156.0" text="Prof. Vikrant Chole" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="inchargeDept2" text="Assistant Professor, CSE Dept, GHRAET">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="inchangePosition2" text="Project Guide">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow fx:id="TextTeam1" layoutX="6.0" layoutY="536.0" opacity="0.0" prefHeight="65.0" prefWidth="172.0" textAlignment="CENTER">
+         <children>
+            <Label fx:id="teamName1" alignment="CENTER" prefHeight="25.0" prefWidth="156.0" text="Sagar Shubham" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="teamDept1" text="CSE Dept, GHRAET">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Batch of 2019">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow fx:id="TextTeam2" layoutX="177.0" layoutY="536.0" opacity="0.0" prefHeight="65.0" prefWidth="172.0" textAlignment="CENTER">
+         <children>
+            <Label fx:id="teamName2" alignment="CENTER" prefHeight="25.0" prefWidth="156.0" text="Ankita Sohgaura" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="teamDept2" text="CSE Dept, GHRAET">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Batch of 2019">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow fx:id="TextTeam3" layoutX="347.0" layoutY="536.0" opacity="0.0" prefHeight="65.0" prefWidth="172.0" textAlignment="CENTER">
+         <children>
+            <Label fx:id="teamName3" alignment="CENTER" prefHeight="25.0" prefWidth="156.0" text="Renua Tekam" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="teamDept3" text="CSE Dept, GHRAET">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Batch of 2019">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow fx:id="TextTeam4" layoutX="518.0" layoutY="536.0" opacity="0.0" prefHeight="65.0" prefWidth="172.0" textAlignment="CENTER">
+         <children>
+            <Label fx:id="teamName4" alignment="CENTER" prefHeight="25.0" prefWidth="156.0" text="Ashutosh Paliwal" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="teamDept4" text="CSE Dept, GHRAET">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Batch of 2019">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+      <TextFlow fx:id="TextTeam5" layoutX="687.0" layoutY="536.0" opacity="0.0" prefHeight="65.0" prefWidth="172.0" textAlignment="CENTER">
+         <children>
+            <Label fx:id="teamName5" alignment="CENTER" prefHeight="25.0" prefWidth="156.0" text="Shashank Singh" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="teamDept5" text="CSE Dept, GHRAET">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Batch of 2019">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </TextFlow>
+   </children>
+</AnchorPane>

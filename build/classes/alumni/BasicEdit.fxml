@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="312.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alumni.BasicEditController">
+   <children>
+      <AnchorPane prefHeight="324.0" prefWidth="483.0" style="-fx-border-color: #454545; -fx-border-width: 2px;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Edit Personal Details" textFill="#a1a1a1">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="firstNameEdit" labelFloat="true" layoutX="24.0" layoutY="55.0" prefHeight="29.0" prefWidth="203.0" promptText="Name">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="CustFileChooser" labelFloat="true" layoutX="255.0" layoutY="55.0" onMouseClicked="#handleFileChooserBtn" prefHeight="29.0" prefWidth="203.0" promptText="Profile picture">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="nationalityEdit" labelFloat="true" layoutX="194.0" layoutY="118.0" prefHeight="29.0" prefWidth="131.0" promptText="Nationality">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="addressEdit" labelFloat="true" layoutX="21.0" layoutY="177.0" prefHeight="29.0" prefWidth="438.0" promptText="Address">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="cityEdit" labelFloat="true" layoutX="21.0" layoutY="232.0" prefHeight="29.0" prefWidth="131.0" promptText="City/Village">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="stateEdit" labelFloat="true" layoutX="175.0" layoutY="232.0" prefHeight="29.0" prefWidth="131.0" promptText="State">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="pincodeEdit" labelFloat="true" layoutX="325.0" layoutY="232.0" prefHeight="29.0" prefWidth="138.0" promptText="Pincode">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="saveBtn" layoutX="380.0" layoutY="276.0" onAction="#onBasicSaveBtn" prefHeight="36.0" prefWidth="81.0" style="-fx-text-fill: blue;" text="Save">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="cancelBtn" layoutX="294.0" layoutY="276.0" onMouseClicked="#onBasicCancelBtn" prefHeight="36.0" prefWidth="81.0" style="-fx-text-fill: blue;" text="Cancel">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <RadioButton fx:id="femaleEdit" layoutX="340.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#handleGenderSelection" prefHeight="17.0" prefWidth="67.0" text="Female">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="maleEdit" layoutX="411.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#handleGenderSelection" text="Male">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </RadioButton>
+            <JFXDatePicker fx:id="dobEdit" layoutX="23.0" layoutY="121.0" prefHeight="25.0" prefWidth="145.0" promptText="DOB" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

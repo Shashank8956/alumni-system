@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="329.0" prefWidth="483.0" style="-fx-background-color: rgba(255,255,255,0.0);" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alumni.BasicEditController">
+   <children>
+      <AnchorPane fx:id="educationTopPane" prefHeight="329.0" prefWidth="483.0" style="-fx-border-color: #454545; -fx-border-width: 2px;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Edit Academic Details" textFill="#a1a1a1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="UGInstituteEdit" labelFloat="true" layoutX="62.0" layoutY="76.0" promptText="Institute Name">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="24.0" layoutY="41.0" text="Undergraduate" textFill="#6f6f6f">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="UGBranchEdit" labelFloat="true" layoutX="282.0" layoutY="76.0" promptText="Branch">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="UGPassEdit" labelFloat="true" layoutX="62.0" layoutY="121.0" prefHeight="29.0" prefWidth="91.0" promptText="Passing Class">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="UGBatchEdit" labelFloat="true" layoutX="337.0" layoutY="121.0" prefHeight="29.0" prefWidth="91.0" promptText="Batch">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="24.0" layoutY="175.0" text="Undergraduate" textFill="#6f6f6f">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="PGInstituteEdit" labelFloat="true" layoutX="59.0" layoutY="212.0" promptText="Institute Name">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="PGBranchEdit" labelFloat="true" layoutX="282.0" layoutY="212.0" promptText="Branch">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="PGPassEdit" labelFloat="true" layoutX="59.0" layoutY="259.0" prefHeight="29.0" prefWidth="91.0" promptText="Passing Class">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="PGBatchEdit" labelFloat="true" layoutX="337.0" layoutY="259.0" prefHeight="29.0" prefWidth="91.0" promptText="Batch">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="saveEditBtn" layoutX="414.0" layoutY="300.0" onAction="#onEducationSaveBtn" style="-fx-text-fill: blue;" text="SAVE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="cancelEducationBtn" layoutX="339.0" layoutY="300.0" onMouseClicked="#onEducationCancelBtn" style="-fx-text-fill: blue;" text="CANCEL">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="UGCourseEdit" labelFloat="true" layoutX="196.0" layoutY="123.0" onAction="#onEducationSaveBtn" prefHeight="25.0" prefWidth="91.0" promptText="Course" />
+            <JFXTextField fx:id="PGCourseEdit" labelFloat="true" layoutX="196.0" layoutY="261.0" prefHeight="25.0" prefWidth="91.0" promptText="Course" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="949.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="951.0" prefWidth="850.0">
+         <children>
+            <Label layoutX="411.0" layoutY="69.0" prefHeight="17.0" prefWidth="219.0" text="Name">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="445.0" layoutY="293.0" prefHeight="17.0" prefWidth="127.0" text="Passing %">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="411.0" layoutY="112.0" prefHeight="17.0" prefWidth="127.0" text="Age:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="411.0" layoutY="144.0" prefHeight="17.0" prefWidth="237.0" text="Address">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="411.0" layoutY="175.0" text="State">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="175.0" text="City">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="648.0" layoutY="175.0" text="Pincode">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="390.0" layoutY="29.0" text="Basic Details" textFill="#a8a8a8">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="224.0" text="Education" textFill="#a8a8a8">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="261.0" text="Undergraduate">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="293.0" text="College Name">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="213.0" layoutY="293.0" text="Branch">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="322.0" layoutY="293.0" text="Batch of">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="354.0" text="Post Graduate">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="383.0" text="College Name">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="213.0" layoutY="383.0" text="Branch">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="322.0" layoutY="383.0" text="Batch of">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="445.0" layoutY="383.0" prefHeight="17.0" prefWidth="127.0" text="Passing %">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="62.0" layoutY="335.0" prefHeight="3.0" prefWidth="716.0" />
+            <Separator layoutX="140.0" layoutY="240.0" prefHeight="2.0" prefWidth="700.0" />
+            <Separator layoutX="543.0" layoutY="44.0" prefHeight="3.0" prefWidth="293.0" />
+            <Label layoutX="23.0" layoutY="442.0" text="Job Details" textFill="#a8a8a8">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Separator layoutX="140.0" layoutY="457.0" prefHeight="2.0" prefWidth="700.0" />
+            <JFXListView layoutX="62.0" layoutY="485.0" prefHeight="167.0" prefWidth="728.0" />
+            <Label layoutX="26.0" layoutY="694.0" text="Contacts" textFill="#a8a8a8">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Separator layoutX="126.0" layoutY="711.0" prefHeight="1.0" prefWidth="714.0" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

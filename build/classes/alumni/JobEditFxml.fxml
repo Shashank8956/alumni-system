@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="325.0" prefWidth="529.0" style="-fx-border-width: 2px; -fx-border-color: #454545;" styleClass="-fx-border-width" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alumni.BasicEditController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Professional Details" textFill="#454545">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="jobList" layoutX="19.0" layoutY="207.0" prefHeight="104.0" prefWidth="492.0" />
+      <JFXButton fx:id="saveJobBtn" layoutX="459.0" layoutY="163.0" onAction="#onJobSaveBtn" style="-fx-text-fill: blue;" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="updateJobBtn" layoutX="393.0" layoutY="163.0" onAction="#onJobUpdateBtn" style="-fx-text-fill: blue;" text="Update">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="cancelJobBtn" layoutX="332.0" layoutY="163.0" onAction="#onJobCancelBtn" style="-fx-text-fill: blue;" text="Cancel">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="companyEdit" labelFloat="true" layoutX="32.0" layoutY="50.0" promptText="Company Name*" />
+      <JFXTextField fx:id="positionEdit" labelFloat="true" layoutX="206.0" layoutY="50.0" promptText="Designation*" />
+      <JFXTextField fx:id="packageEdit" labelFloat="true" layoutX="373.0" layoutY="50.0" promptText="Package*" />
+      <JFXDatePicker fx:id="dojEdit" layoutX="32.0" layoutY="107.0" prefHeight="25.0" prefWidth="135.0" promptText="DOJ*" />
+      <JFXDatePicker fx:id="dolEdit" layoutX="206.0" layoutY="107.0" prefHeight="25.0" prefWidth="135.0" promptText="DOL*" />
+      <JFXTextField fx:id="locationEdit" labelFloat="true" layoutX="373.0" layoutY="107.0" promptText="Location" />
+      <Separator layoutX="174.0" layoutY="23.0" prefHeight="0.0" prefWidth="338.0" />
+   </children>
+</AnchorPane>
