@@ -87,17 +87,17 @@ public class DataBase {
         String academicTable = "CREATE TABLE IF NOT EXISTS academic("+
                               "_id INT NOT NULL, "+
                               "UG INT NOT NULL, "+
-                              "Umarks VARCHAR(10) NOT NULL, "+
-                              "Ucollege VARCHAR(100) NOT NULL, "+
-                              "Ubatch CHAR(5) NOT NULL, "+
-                              "Ubranch VARCHAR(20) NOT NULL, "+
-                              "Ucourse VARCHAR(5) NOT NULL, "+
+                              "Umarks VARCHAR(10), "+
+                              "Ucollege VARCHAR(100), "+
+                              "Ubatch CHAR(5), "+
+                              "Ubranch VARCHAR(20), "+
+                              "Ucourse VARCHAR(10), "+
                 
                               "Pmarks VARCHAR(10), "+
                               "Pcollege VARCHAR(100), "+
                               "Pbatch VARCHAR(5) , "+
                               "Pbranch VARCHAR(20), "+
-                              "Pcourse VARCHAR(6), "+
+                              "Pcourse VARCHAR(10), "+
                               "FOREIGN KEY (_id) REFERENCES personal(_id));";
         
         String professionTable = "CREATE TABLE IF NOT EXISTS profession("+

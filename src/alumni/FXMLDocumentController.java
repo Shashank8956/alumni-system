@@ -145,9 +145,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private JFXTextField aCollegeUG, aBatchUG, aGradeUG;
     @FXML 
-    private ChoiceBox<String> aBranchUG, aCourseUG;
+    private ChoiceBox<String> aBranchUG, aCourseUG, aCoursePG, aBranchPG;
     @FXML
-    private JFXTextField aCollegePG, aCoursePG, aBatchPG, aGradePG, aBranchPG;
+    private JFXTextField aCollegePG, aBatchPG, aGradePG;
     
     @FXML
     private JFXToggleButton courseToggle;
@@ -198,7 +198,7 @@ public class FXMLDocumentController implements Initializable {
     private AlumniModel insertMod = new AlumniModel();
     private AlumniModel EditModel = new AlumniModel();
     //private HashSet<Integer> deleteId = new HashSet<Integer>();
-    private int deleteId =-1;
+    private int deleteId =-1, errorFlag = -1;
     private String gender = "u";
     private int educationLevel = 0;         //UG =0 ; PG = 1;
     private boolean is_in_search_mode = false, isPlaced = true;
@@ -580,14 +580,14 @@ public class FXMLDocumentController implements Initializable {
         
         aCourseUG.setItems(FXCollections.observableArrayList("Select Course", "BE"));
         aCourseUG.getSelectionModel().selectFirst();
+        aBranchUG.setItems(FXCollections.observableArrayList("Select Branch"));
+        aBranchUG.getSelectionModel().selectFirst();
         
-        if(aCourseUG.getSelectionModel().getSelectedIndex()==0){
-            aBranchUG.setItems(FXCollections.observableArrayList("Select Branch"));
-            aBranchUG.getSelectionModel().selectFirst();
-        }else{
-            aBranchUG.setItems(FXCollections.observableArrayList("Select Branch", "CSE", "MECH", "IT", "CIVIL", "ETC"));
-            aBranchUG.getSelectionModel().selectFirst();
-        }
+        aCoursePG.setItems(FXCollections.observableArrayList("Select Course", "M.Tech"));
+        aCoursePG.getSelectionModel().selectFirst();
+        aBranchPG.setItems(FXCollections.observableArrayList("Select Branch"));
+        aBranchPG.getSelectionModel().selectFirst();
+        
     }
     
 /**
@@ -694,8 +694,11 @@ public class FXMLDocumentController implements Initializable {
         Stage stage = new Stage();
         file = fileChooser.showOpenDialog(stage);
         String fileName = null;
-        if(file.getName()!=null)
+        if(file.getName().toString()!=null)
             fileName = file.getName();
+        else
+            fileName = null;
+        
         if(fileName!=null && (fileName.contains("png") || fileName.contains("jpg") || fileName.contains("jpeg")))
             CustFileChooser.setText(file.getAbsolutePath());
         else{
@@ -1102,8 +1105,8 @@ public class FXMLDocumentController implements Initializable {
             aBranchPG.setDisable(true);
 
             aCollegePG.setText("");
-            aCoursePG.setText("");
-            aBranchPG.setText("");
+            aCoursePG.getSelectionModel().selectFirst();
+            aBranchPG.getSelectionModel().selectFirst();
             aBatchPG.setText("");
             aGradePG.setText("");
             
@@ -1187,8 +1190,8 @@ public class FXMLDocumentController implements Initializable {
         
         
         insertMod.setCollegeNamePG(aCollegePG.getText());
-        insertMod.setCoursePG(aCoursePG.getText());
-        insertMod.setBranchPG(aBranchPG.getText());
+        insertMod.setCoursePG(aCoursePG.getSelectionModel().getSelectedItem());
+        insertMod.setBranchPG(aBranchPG.getSelectionModel().getSelectedItem());
         insertMod.setPassPG(aGradePG.getText());
         if(aBatchPG.getText().length()==4)
             insertMod.setBatchPG(Integer.parseInt(aBatchPG.getText()));
@@ -1244,7 +1247,8 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("********************************");
         }
         
-        if(!insertMod.isEmpty(isPlaced, educationLevel)){
+        if(!insertMod.isEmpty(isPlaced, educationLevel) && errorFlag == -1){
+            System.out.println("error = " + errorFlag);
             try {
                 db.insertData(insertMod);
             } catch (SQLException ex) {
@@ -1270,8 +1274,8 @@ public class FXMLDocumentController implements Initializable {
             aGradeUG.setText("");
             
             aCollegePG.setText("");
-            aCoursePG.setText("");
-            aBranchPG.setText("");
+            aCoursePG.getSelectionModel().selectFirst();;
+            aBranchPG.getSelectionModel().selectFirst();;
             aBatchPG.setText("");
             aGradePG.setText("");
             
@@ -1417,6 +1421,8 @@ public class FXMLDocumentController implements Initializable {
         if(i==0 && is_in_search_mode){
            is_in_search_mode = false;
            closeSearchBar();
+        }else if(i==0){
+            deleteId=-1;
         }
     }
 
@@ -1541,7 +1547,7 @@ public class FXMLDocumentController implements Initializable {
  */    
     public void setProfilePage(AlumniModel mod1){
         EditModel = mod1;
-        
+        deleteId = -1;
         //setProfessionDetails(mod1);
         populateScrJobList(mod1);
         scrAge.setText("Dob:    "+mod1.getDob());
@@ -2003,8 +2009,10 @@ public class FXMLDocumentController implements Initializable {
                        cMobile.setText("");
                        cMobile.validate();
                        cMobile.setText(str);
+                       errorFlag = 1;
                     }else{
                         cMobile.resetValidation();
+                        errorFlag = -1;
                     }
                 }
             }
@@ -2085,7 +2093,7 @@ public class FXMLDocumentController implements Initializable {
             }
         });*/
         
-        aBranchPG.focusedProperty().addListener(new ChangeListener<Boolean>(){
+        /*aBranchPG.focusedProperty().addListener(new ChangeListener<Boolean>(){
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue){
                 if (!newPropertyValue){
@@ -2094,7 +2102,7 @@ public class FXMLDocumentController implements Initializable {
                     aBranchPG.setText(update);
                 }
             }
-        });
+        });*/
         
         /*aCourseUG.focusedProperty().addListener(new ChangeListener<Boolean>(){
             @Override
@@ -2107,7 +2115,7 @@ public class FXMLDocumentController implements Initializable {
             }
         });*/
         
-        aCoursePG.focusedProperty().addListener(new ChangeListener<Boolean>(){
+        /*aCoursePG.focusedProperty().addListener(new ChangeListener<Boolean>(){
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue){
                 if (!newPropertyValue){
@@ -2116,7 +2124,7 @@ public class FXMLDocumentController implements Initializable {
                     aCoursePG.setText(update);
                 }
             }
-        });
+        });*/
         
         cEmail.focusedProperty().addListener(new ChangeListener<Boolean>(){
             @Override
@@ -2129,8 +2137,10 @@ public class FXMLDocumentController implements Initializable {
                     Pattern pat = Pattern.compile(emailRegex);
                     if(cEmail.getText()!=null && !pat.matcher(cEmail.getText()).matches()){
                         cEmail.validate();
+                        errorFlag = 1;
                     }else{
                         cEmail.resetValidation();
+                        errorFlag = -1;
                     }
                 }
             }
@@ -2147,6 +2157,21 @@ public class FXMLDocumentController implements Initializable {
                 }else if(aCourseUG.getSelectionModel().getSelectedIndex()==1){
                     aBranchUG.setItems(FXCollections.observableArrayList("Select Branch", "CSE", "MECH", "IT", "CIVIL", "ETC"));
                     aBranchUG.getSelectionModel().selectFirst();
+        }
+            }
+        });
+        
+        aCoursePG.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                System.out.println("Selected index = " + aCoursePG.getSelectionModel().getSelectedIndex());
+        
+                if(aCoursePG.getSelectionModel().getSelectedIndex()==0){
+                    aBranchPG.setItems(FXCollections.observableArrayList("Select Branch"));
+                    aBranchPG.getSelectionModel().selectFirst();
+                }else if(aCoursePG.getSelectionModel().getSelectedIndex()==1){
+                    aBranchPG.setItems(FXCollections.observableArrayList("Select Branch", "CSE", "VLSI", "Stuctural", "Industrial", "CAD/CAM"));
+                    aBranchPG.getSelectionModel().selectFirst();
         }
             }
         });
