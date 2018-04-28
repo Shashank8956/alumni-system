@@ -1839,7 +1839,7 @@ public class FXMLDocumentController implements Initializable {
            recordsList.getItems().add(setCustomRow(mod.get(i)));
         }
     }
-    
+        
     public void populateScrJobList(AlumniModel tempMod){
         scrJobList.getItems().clear();
         //removeDuplicatesJobs(tempMod.getJobmod());

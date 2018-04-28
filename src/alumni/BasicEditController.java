@@ -40,16 +40,12 @@ public class BasicEditController implements Initializable {
 /***********************************************Basic Edit*******/
     @FXML
     private JFXTextField firstNameEdit, lastNameEdit, nationalityEdit, addressEdit, cityEdit, stateEdit, pincodeEdit;
-
     @FXML
     private JFXTextField CustFileChooser;
-    
     @FXML
     private RadioButton femaleEdit, maleEdit;
-
     @FXML
     private JFXDatePicker dobEdit;
-    
     @FXML
     JFXButton cancelBtn, saveBtn;
     
@@ -59,23 +55,18 @@ public class BasicEditController implements Initializable {
     
     @FXML
     private JFXTextField UGInstituteEdit, UGBranchEdit, UGPassEdit, UGBatchEdit, UGCourseEdit;
-    
     @FXML
     private JFXTextField PGInstituteEdit, PGBranchEdit, PGPassEdit, PGBatchEdit, PGCourseEdit;
-
     @FXML
     private JFXButton saveEditBtn, cancelEducationBtn;
     
 /***********************************************Job Edit*******/
     @FXML
     private JFXListView<HBox> jobList;
-
     @FXML
     private JFXButton saveJobBtn, updateJobBtn, cancelJobBtn;
-
     @FXML
     private JFXTextField companyEdit, positionEdit, packageEdit, locationEdit;
-
     @FXML
     private JFXDatePicker dojEdit, dolEdit;
 
@@ -83,7 +74,6 @@ public class BasicEditController implements Initializable {
 /***********************************************Contacts Edit*******/
     @FXML
     private JFXTextField mobEdit, landEdit, emailEdit, linkedinEdit, facebookEdit, instagramEdit;
-    
     @FXML
     JFXButton cancelContactbtn, saveContactbtn;
 /******************************************************************/

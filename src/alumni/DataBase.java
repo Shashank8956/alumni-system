@@ -90,14 +90,14 @@ public class DataBase {
                               "Umarks VARCHAR(10), "+
                               "Ucollege VARCHAR(100), "+
                               "Ubatch CHAR(5), "+
-                              "Ubranch VARCHAR(20), "+
-                              "Ucourse VARCHAR(10), "+
+                              "Ubranch VARCHAR(30), "+
+                              "Ucourse VARCHAR(30), "+
                 
                               "Pmarks VARCHAR(10), "+
                               "Pcollege VARCHAR(100), "+
                               "Pbatch VARCHAR(5) , "+
-                              "Pbranch VARCHAR(20), "+
-                              "Pcourse VARCHAR(10), "+
+                              "Pbranch VARCHAR(30), "+
+                              "Pcourse VARCHAR(30), "+
                               "FOREIGN KEY (_id) REFERENCES personal(_id));";
         
         String professionTable = "CREATE TABLE IF NOT EXISTS profession("+

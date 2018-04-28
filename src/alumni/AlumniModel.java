@@ -101,9 +101,11 @@ public class AlumniModel {
                 remark = null;
                 if(firstname.isEmpty() || lastname.isEmpty() || dob.isEmpty() || nationality.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || pincode.isEmpty())
                     return true;
-                else if(collegeNameUG.isEmpty() || branchUG.contains("Select") || courseUG.contains("Select") || passUG.isEmpty())
+                else if(collegeNameUG.isEmpty() || branchUG.contains("Select") || courseUG.contains("Select") || passUG.isEmpty()){
+                    courseUG = "";
+                    branchUG = "";
                     return true;
-                else if(jobmod.isEmpty() || jobmod.get(0).getCompanyName().isEmpty() || jobmod.get(0).getDesignation().isEmpty()|| jobmod.get(0).getDoj().isEmpty())
+                }else if(jobmod.isEmpty() || jobmod.get(0).getCompanyName().isEmpty() || jobmod.get(0).getDesignation().isEmpty()|| jobmod.get(0).getDoj().isEmpty())
                     return true;
                 else if(mobile.isEmpty() || email.isEmpty())
                     return true;
@@ -119,9 +121,11 @@ public class AlumniModel {
 
                 if(firstname.isEmpty() || lastname.isEmpty() || dob.isEmpty() || nationality.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || pincode.isEmpty())
                     return true;
-                else if(collegeNameUG.isEmpty() || branchUG.contains("Select") || courseUG.contains("Select") || passUG.isEmpty())
+                else if(collegeNameUG.isEmpty() || branchUG.contains("Select") || courseUG.contains("Select") || passUG.isEmpty()){
+                    courseUG = "";
+                    branchUG = "";
                     return true;
-                else if(remark.isEmpty())
+                }else if(remark.isEmpty())
                     return true;
                 else if(mobile.isEmpty() || email.isEmpty())
                     return true;
@@ -134,9 +138,11 @@ public class AlumniModel {
                 remark = null;
                 if(firstname.isEmpty() || lastname.isEmpty() || dob.isEmpty() || nationality.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || pincode.isEmpty())
                     return true;
-                else if(collegeNamePG.isEmpty() || branchPG.isEmpty() || coursePG.isEmpty() || passPG.isEmpty())
+                else if(collegeNamePG.isEmpty() || branchPG.contains("Select") || coursePG.contains("Select") || passPG.isEmpty()){
+                    coursePG = "";
+                    branchPG = "";
                     return true;
-                else if(jobmod.isEmpty() || jobmod.get(0).getCompanyName().isEmpty() || jobmod.get(0).getDesignation().isEmpty()|| jobmod.get(0).getDoj().isEmpty())
+                }else if(jobmod.isEmpty() || jobmod.get(0).getCompanyName().isEmpty() || jobmod.get(0).getDesignation().isEmpty()|| jobmod.get(0).getDoj().isEmpty())
                     return true;
                 else if(mobile.isEmpty() || email.isEmpty())
                     return true;
@@ -152,9 +158,11 @@ public class AlumniModel {
 
                 if(firstname.isEmpty() || lastname.isEmpty() || dob.isEmpty() || nationality.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || pincode.isEmpty())
                     return true;
-                else if(collegeNamePG.isEmpty() || branchPG.isEmpty() || coursePG.isEmpty() || passPG.isEmpty())
+                else if(collegeNamePG.isEmpty() || branchPG.contains("Select") || coursePG.contains("Select") || passPG.isEmpty()){
+                    coursePG = "";
+                    branchPG = "";
                     return true;
-                else if(remark.isEmpty())
+                }else if(remark.isEmpty())
                     return true;
                 else if(mobile.isEmpty() || email.isEmpty())
                     return true;
@@ -177,7 +185,7 @@ public class AlumniModel {
                 remark = null;
                 if(firstname.isEmpty() || lastname.isEmpty() || dob.isEmpty() || nationality.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || pincode.isEmpty())
                     return "personal";
-                else if(collegeNameUG.isEmpty() || branchUG.contains("Select") || courseUG.isEmpty() || passUG.isEmpty())
+                else if(collegeNameUG.isEmpty() || branchUG.contains("Select") || courseUG.contains("Select") || passUG.isEmpty())
                     return "academic";
                 else if(jobmod.isEmpty() || jobmod.get(0).getCompanyName().isEmpty() || jobmod.get(0).getDesignation().isEmpty()|| jobmod.get(0).getDoj().isEmpty())
                     return "profession";
@@ -195,7 +203,7 @@ public class AlumniModel {
 
                 if(firstname.isEmpty() || lastname.isEmpty() || dob.isEmpty() || nationality.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || pincode.isEmpty())
                     return "personal";
-                else if(collegeNameUG.isEmpty() || branchUG.isEmpty() || courseUG.isEmpty() || passUG.isEmpty())
+                else if(collegeNameUG.isEmpty() || branchUG.contains("Select") || courseUG.contains("Select") || passUG.isEmpty())
                     return "academic";
                 else if(remark.isEmpty())
                     return "profession";
@@ -210,7 +218,7 @@ public class AlumniModel {
                 remark = null;
                 if(firstname.isEmpty() || lastname.isEmpty() || dob.isEmpty() || nationality.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || pincode.isEmpty())
                     return "personal";
-                else if(collegeNamePG.isEmpty() || branchPG.isEmpty() || coursePG.isEmpty() || passPG.isEmpty())
+                else if(collegeNamePG.isEmpty() || branchPG.contains("Select") || coursePG.contains("Select") || passPG.isEmpty())
                     return "academic";
                 else if(jobmod.isEmpty() || jobmod.get(0).getCompanyName().isEmpty() || jobmod.get(0).getDesignation().isEmpty()|| jobmod.get(0).getDoj().isEmpty())
                     return "profession";
@@ -228,7 +236,7 @@ public class AlumniModel {
 
                 if(firstname.isEmpty() || lastname.isEmpty() || dob.isEmpty() || nationality.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || pincode.isEmpty())
                     return "personal";
-                else if(collegeNamePG.isEmpty() || branchPG.isEmpty() || coursePG.isEmpty() || passPG.isEmpty())
+                else if(collegeNamePG.isEmpty() || branchPG.contains("Select") || coursePG.contains("Select") || passPG.isEmpty())
                     return "academic";
                 else if(remark.isEmpty())
                     return "profession";
